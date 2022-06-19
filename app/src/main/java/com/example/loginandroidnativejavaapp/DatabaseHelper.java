@@ -11,6 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "USERS";
     public static final String EMAIL = "EMAIL";
     public static final String PASSWORD = "PASSWORD";
+    public static final String USER_ID = "USER_ID";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -37,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean isUserRegistered(String email, String password) {
-        String[] columns = {email};
+        String[] columns = {USER_ID};
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = EMAIL + "=? and " + PASSWORD + "=?";
         String[] selectionArgs = {email, password};

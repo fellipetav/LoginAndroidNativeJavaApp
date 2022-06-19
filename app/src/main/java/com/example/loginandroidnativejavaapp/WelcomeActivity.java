@@ -13,7 +13,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         String username = getIntent().getStringExtra("username");
-        TextView username = findViewById(R.id.username);
-        username.setText("Welcome " + username);
+        TextView usernameTxtView = findViewById(R.id.username);
+        usernameTxtView.setText("Welcome " + username);
     }
 }
