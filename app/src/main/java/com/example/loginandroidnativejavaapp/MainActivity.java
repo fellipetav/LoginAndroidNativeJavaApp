@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
+        int counter=3;
+        counter--;
+        if(counter==0){
+            //TODO: disable the button, close the application
+        }
     }
 }
