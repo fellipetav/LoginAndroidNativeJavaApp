@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(this, RegisterActivity.class);
+                Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(registerIntent);
             }
         });
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             private void goToWelcomePageIfUserIsRegistered(String email, String password, String username) {
                 if(db.isUserRegistered(email, password)){
                     // We can create an Intent and go to another activity or screen, else show a Toast Message
-                    Intent moveToWelcomePage = new Intent(this, WelcomeActivity.class);
+                    Intent moveToWelcomePage = new Intent(MainActivity.this, WelcomeActivity.class);
                     moveToWelcomePage.putExtra("username", username);
                     startActivity(moveToWelcomePage);
                     Toast.makeText(MainActivity.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();

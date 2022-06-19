@@ -37,7 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean isUserRegistered(String email, String password) {
-        String[] columns = {USER_ID};
+        String[] columns = {email};
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = EMAIL + "=? and " + PASSWORD + "=?";
         String[] selectionArgs = {email, password};
